@@ -5,6 +5,7 @@ from math import radians, cos, sin, asin, sqrt
 from sqlalchemy import create_engine, Column, String, Float, Integer, Boolean, JSON
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.mutable import MutableList
 from dotenv import load_dotenv
 import logging
 from datetime import datetime
@@ -54,7 +55,7 @@ class Business(Base):
     image_url = Column(String)
     url = Column(String)
     is_closed = Column(Boolean)
-    scenario_tags = Column(JSON)
+    scenario_tags = Column(MutableList.as_mutable(JSON))
 
     # Premium fields
     website = Column(String, nullable=True)
@@ -223,7 +224,7 @@ def batch_ingest(terms):
 
         # you can set the amount of results
         # yelp limits to 50 results/api request
-        for offset in range(0, 100, 50):
+        for offset in range(0, 50, 50):
             print(f"Offset: {offset}")
             try:
                 results = search_yelp(term=tag, offset=offset)
@@ -253,13 +254,13 @@ def batch_ingest(terms):
 if __name__ == "__main__":
     SCENARIO_TERMS = [
         "fine dining",
-        # "business dinner",
-        # "casual lunch",
-        # "celebration restaurant",
-        # "private dining",
-        # "Michelin",
-        # "large group dinner",
-        # "cocktail bar"
-        # "vegetarian",
+        "business dinner",
+        "casual lunch",
+        "celebration restaurant",
+        "private dining",
+        "Michelin",
+        "large group dinner",
+        "cocktail bar",
+        "vegetarian",
     ]
     batch_ingest(SCENARIO_TERMS)
