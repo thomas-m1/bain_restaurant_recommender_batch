@@ -1,0 +1,35 @@
+# Logs and local environments
+logs/
+.env
+
+# Virtual environments
+venv/
+.venv/
+
+# Compiled Python files
+__pycache__/
+*.py[cod]
+
+# IDE configurations
+.vscode/
+.idea/
+
+# Cache and build artifacts
+*.log
+.cache/
+dist/
+build/
+
+# Pytest and testing artifacts
+.pytest_cache/
+.coverage
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Other common Python exclusions
+.mypy_cache/
+.dmypy.json
+site/
+.pyre/
+.pytype/
