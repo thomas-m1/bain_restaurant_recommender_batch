@@ -31,8 +31,8 @@ print("Using DB:", DB_URL)
 HEADERS = {"Authorization": f"Bearer {API_KEY}"}
 
 # Bain Toronto coordinates
-BAIN_LAT = 43.6487
-BAIN_LON = -79.38544
+BAIN_LAT = 43.670116
+BAIN_LON = -79.385757
 
 # SQLAlchemy setup
 Base = declarative_base()
