@@ -1,5 +1,5 @@
-# Bain Restaurant Batch Ingestor
-
+# Restaurant Batch Ingestor
+Bain Restaurant Recommender MVP
 This script pulls restaurant data from the Yelp API based on specific search terms (e.g., "fine dining") and stores the results in a PostgreSQL database. It's designed to help teams quickly identify quality dining options near Bain’s Toronto office.
 
 ## What It Does
